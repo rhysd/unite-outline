@@ -98,47 +98,47 @@ function! s:outline_info.create_heading(which, heading_line, matched_line, conte
         let type = 'comment'
         let word = a:heading_line
         let level = s:Util.get_comment_heading_level(a:context, m_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<typealias\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*typealias\>'
         let type = 'typealias'
         let word = substitute(matchstr(a:heading_line, '\<typealias\s\+\zs\h\w*'), '\s\+', ' ', 'g') . ' : type'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<func\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*func\>'
         let type = 'function'
         let word = substitute(matchstr(a:heading_line, '\<func\s\+\zs\%(\S\&[^<(]\)*'), '\s\+', ' ', 'g') . ' : func'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<enum\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*enum\>'
         let type = 'enum'
         let word = substitute(matchstr(a:heading_line, '\<enum\s\+\zs\h\w*'), '\s\+', ' ', 'g') . ' : enum'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<case\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*case\>'
         let type = 'case'
         let word = substitute(matchstr(a:heading_line, '\<case\s\+[^:]\+'), '\s\+', ' ', 'g')
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<class\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*class\>'
         let type = 'class'
         let word = substitute(matchstr(a:heading_line, '\<class\s\+\zs\h\w*'), '\s\+', ' ', 'g') . ' : class'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<struct\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*struct\>'
         let type = 'struct'
         let word = substitute(matchstr(a:heading_line, '\<struct\s\+\zs\h\w*'), '\s\+', ' ', 'g') . ' : struct'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<protocol\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*protocol\>'
         let type = 'protocol'
         let word = substitute(matchstr(a:heading_line, '\<protocol\s\+\zs\h\w*'), '\s\+', ' ', 'g') . ' : protocol'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<init\s*('
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*init\s*('
         let type = 'init'
         let word = 'init'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<deinit\s*('
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*deinit\s*('
         let type = 'deinit'
         let word = 'deinit'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<extension\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*extension\>'
         let type = 'extension'
         let word = substitute(matchstr(a:heading_line, '\<extension\s\+\zs[^:]\+'), '\s\+', ' ', 'g') . ' : extension'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
-    elseif a:which ==# 'heading' && a:heading_line =~# '\<operator\>'
+    elseif a:which ==# 'heading' && a:heading_line =~# '^\s*operator\>'
         let type = 'operator'
         let word = substitute(matchstr(a:heading_line, '\<operator\s\+\zs\%(\h\w*\s\+\)\=\S\+'), '\s\+', ' ', 'g') . ' : operator'
         let level = s:Util.get_indent_level(a:context, a:context.heading_lnum)
