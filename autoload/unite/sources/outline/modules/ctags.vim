@@ -214,7 +214,7 @@ function! s:Ctags_extract_headings(context) abort
     return []
   elseif !s:Ctags_supports(filetype)
     call unite#print_message("[unite-outline] " .
-          \ "Sorry, your ctags doesn't support " . toupper(filetype))
+          \ "Sorry, your ctags doesn't support " . filetype)
     return []
   endif
 
