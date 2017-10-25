@@ -453,6 +453,12 @@ let s:Ctags.lang_info.cs = {
       \ 'scope_delim'  : '.',
       \ }
 
+let s:Ctags.lang_info.rust = {
+      \ 'name': 'Rust',
+      \ 'ctags_options': '',
+      \ 'scope_kinds'  : [],
+      \ }
+
 let s:Ctags.lang_info.typescript = {
       \ 'name': 'typescript',
       \ 'ctags_options': '',
