@@ -21,7 +21,7 @@ let s:Util = unite#sources#outline#import('Util')
 " Outline Info
 
 let s:outline_info = {
-      \ 'heading'  : '^\s*\%(void\|bool\|int\|char\|byte\|word\|long\|float\|double\|middle_data_t\|command_data_t\|serial_data_t\|middle_data_t\)\>',
+      \ 'heading'  : '^\s*\%(void\|command_data_t\|serial_data_t\|middle_data_t\)\>',
       \
       \ 'heading_groups': {
       \   'function' : ['function'],
