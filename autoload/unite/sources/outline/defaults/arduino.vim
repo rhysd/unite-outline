@@ -9,7 +9,7 @@
 "=============================================================================
 
 " Default outline info for Arduino
-" Version: 0.0.1
+" Version: 0.0.2
 
 function! unite#sources#outline#defaults#arduino#outline_info() abort
   return s:outline_info
@@ -21,7 +21,7 @@ let s:Util = unite#sources#outline#import('Util')
 " Outline Info
 
 let s:outline_info = {
-      \ 'heading'  : '^\s*\%(void\)\>',
+      \ 'heading'  : '^\s*\%(void\|bool\|int\|char\|byte\|word\|long\|float\|double\|middle_data_t\|command_data_t\|serial_data_t\|middle_data_t\)\>',
       \
       \ 'heading_groups': {
       \   'function' : ['function'],
